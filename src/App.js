@@ -24,9 +24,10 @@ class App extends Component {
       <div className="App">
         <input onChange={this.handleChange} value={this.state.newItem} />
         <button onClick={this.addItem}>Add</button>
-        {/* your code here
-          You should map each grocery item into an Item component
-      */}
+        {this.props.store.list.map((i, ind) => <Item item={i}
+          key={ind}
+          store={this.props.store} />
+        )}
       </div>
     );
   }
